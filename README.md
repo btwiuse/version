@@ -30,16 +30,14 @@ version info offered by this package:
 ```
 ~/k0s/pkg/version$ ./demo 
 {
-  "GitCommit": "184c6d3584743d2b08b872f9628cc1048699ee26",
-  "GitState": "dirty",
-  "GitBranch": "master",
-  "GitSummary": "release-413-20230111-8-g184c6d358-dirty",
-  "BuildDate": "2023-02-08T20:13:14Z",
-  "Version": "v0.1.6",
-  "GoVersion": "go1.20",
-  "Platform": "linux/amd64",
-  "Major": "0",
-  "Minor": "1",
-  "Compiler": "gc"
+  "major": "0",
+  "minor": "0",
+  "gitVersion": "0.0.0",
+  "gitCommit": "34953e164e260c6d520aadf6d612a44c43fb2d21",
+  "gitTreeState": "clean",
+  "buildDate": "2024-01-30T17:59:40Z",
+  "goVersion": "go1.21.6",
+  "compiler": "gc",
+  "platform": "linux/amd64"
 }
 ```
