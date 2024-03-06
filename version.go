@@ -10,27 +10,27 @@ import (
 )
 
 var (
-	MajorString      string
-	MinorString      string
-	GitVersionString  string
-	GitCommitString  string
-	GitTreeStateString   string
-	GitBranchString  string
-	BuildDateString  string
+	MajorString        string
+	MinorString        string
+	GitVersionString   string
+	GitCommitString    string
+	GitTreeStateString string
+	GitBranchString    string
+	BuildDateString    string
 )
 
 var BuildInfo, HasBuildInfo = debug.ReadBuildInfo()
 
 var Info = &Version{
-	Major:      MajorString,
-	Minor:      MinorString,
-	GitVersion:  GitVersionString,
-	GitCommit:  GitCommitString,
-	GitTreeState:   GitTreeStateString,
-	BuildDate:  BuildDateString,
-	GoVersion:  runtime.Version(),
-	Compiler:   runtime.Compiler,
-	Platform:   fmt.Sprintf("%s/%s", runtime.GOOS, runtime.GOARCH),
+	Major:        MajorString,
+	Minor:        MinorString,
+	GitVersion:   GitVersionString,
+	GitCommit:    GitCommitString,
+	GitTreeState: GitTreeStateString,
+	BuildDate:    BuildDateString,
+	GoVersion:    runtime.Version(),
+	Compiler:     runtime.Compiler,
+	Platform:     fmt.Sprintf("%s/%s", runtime.GOOS, runtime.GOARCH),
 }
 
 func init() {
