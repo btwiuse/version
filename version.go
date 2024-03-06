@@ -4,7 +4,6 @@ import (
 	"encoding/json"
 	"fmt"
 	"runtime"
-	"runtime/debug"
 
 	k8s "k8s.io/apimachinery/pkg/version"
 )
@@ -19,8 +18,6 @@ var (
 	BuildDateString    string
 )
 
-var BuildInfo, HasBuildInfo = debug.ReadBuildInfo()
-
 var Info = &Version{
 	Major:        MajorString,
 	Minor:        MinorString,
@@ -33,23 +30,11 @@ var Info = &Version{
 	Platform:     fmt.Sprintf("%s/%s", runtime.GOOS, runtime.GOARCH),
 }
 
-func init() {
-	if HasBuildInfo {
-		var ModVersion = BuildInfo.Main.Version
-		if ModVersion == "" {
-			return
-		}
-		if GitVersionString == "" {
-			GitVersionString = ModVersion
-		}
-	}
-}
-
 func GetVersion() *Version {
 	return Info
 }
 
-// Version is modeled after k8s.io/apimachinery/pkg/version
+// Version is alias to k8s.io/apimachinery/pkg/version.Info
 type Version = k8s.Info
 
 func Decode(data []byte) (*Version, error) {
